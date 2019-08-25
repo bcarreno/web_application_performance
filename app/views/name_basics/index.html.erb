@@ -1,0 +1,19 @@
+<h1>Search</h1>
+
+<%= form_tag(name_basics_path, method: :get) do %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag('search') %>
+<% end %>
+
+<br>
+
+<% if @name_basics.any? %>
+  <%= "#{@name_basics.size} found" %>
+<% end %>
+
+<% @name_basics.each do |name_basic| %>
+  <ul>
+    <li><%= [name_basic.primary_name, name_basic.primary_profession].join(': ') %></li>
+  </ul>
+<% end %>
+
