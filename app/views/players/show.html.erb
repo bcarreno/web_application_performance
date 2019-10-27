@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nconst:</strong>
+  <%= @player.nconst %>
+</p>
+
+<p>
+  <strong>Primary name:</strong>
+  <%= @player.primary_name %>
+</p>
+
+<p>
+  <strong>Birth year:</strong>
+  <%= @player.birth_year %>
+</p>
+
+<p>
+  <strong>Death year:</strong>
+  <%= @player.death_year %>
+</p>
+
+<p>
+  <strong>Primary profession:</strong>
+  <%= @player.primary_profession %>
+</p>
+
+<p>
+  <strong>Known for titles:</strong>
+  <%= @player.known_for_titles %>
+</p>
+
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>
