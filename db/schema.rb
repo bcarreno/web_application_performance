@@ -10,18 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_06_225913) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "name_basics", force: :cascade do |t|
-    t.string "nconst"
-    t.text "primary_name"
-    t.integer "birth_year"
-    t.integer "death_year"
-    t.text "primary_profession"
-    t.text "known_for_titles"
-  end
 
 end
