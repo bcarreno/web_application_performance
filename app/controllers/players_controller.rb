@@ -2,6 +2,7 @@ require 'datadog/statsd'
 
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
+  caches_action :show, expires_in: 1.hour
 
   # GET /players
   # GET /players.json

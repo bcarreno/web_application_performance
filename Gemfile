@@ -38,6 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem "nokogiri", ">= 1.10.4"
 gem "rubyzip", ">= 1.3.0"
 gem 'dogstatsd-ruby'
+gem 'actionpack-action_caching'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
