@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 2019_10_27_221219) do
     t.integer "death_year"
     t.text "primary_profession"
     t.text "known_for_titles"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

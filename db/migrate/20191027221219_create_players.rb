@@ -7,8 +7,6 @@ class CreatePlayers < ActiveRecord::Migration[5.2]
       t.integer :death_year
       t.text :primary_profession
       t.text :known_for_titles
-
-      t.timestamps
     end
   end
 end

@@ -1,10 +1,26 @@
+require 'datadog/statsd'
+
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
   # GET /players
   # GET /players.json
   def index
-    @players = Player.all
+    start_time = Time.now
+    @players = if params[:search].present?
+                     Player.where('primary_name ilike ?', "%#{params[:search]}%")
+                   else
+                     []
+                   end
+    duration = Time.now - start_time
+
+    if params[:search].present?
+      statsd = Datadog::Statsd.new
+
+      statsd.increment('players.search.count')
+
+      statsd.histogram('players.search.time', duration)
+    end
   end
 
   # GET /players/1

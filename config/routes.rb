@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :players
   root to: 'home#index'
-  get '/name_basics', to: 'name_basics#index'
+  #get '/name_basics', to: 'name_basics#index'
   post '/process', to: 'trades#create'
   post '/', to: 'errors#routing'
 

@@ -1,37 +1,21 @@
-<p id="notice"><%= notice %></p>
+<h1>Search</h1>
 
-<h1>Players</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nconst</th>
-      <th>Primary name</th>
-      <th>Birth year</th>
-      <th>Death year</th>
-      <th>Primary profession</th>
-      <th>Known for titles</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @players.each do |player| %>
-      <tr>
-        <td><%= player.nconst %></td>
-        <td><%= player.primary_name %></td>
-        <td><%= player.birth_year %></td>
-        <td><%= player.death_year %></td>
-        <td><%= player.primary_profession %></td>
-        <td><%= player.known_for_titles %></td>
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= form_tag(players_path, method: :get) do %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag('search') %>
+<% end %>
 
 <br>
 
-<%= link_to 'New Player', new_player_path %>
+<% if @players.any? %>
+  <%= "#{@players.size} found" %>
+<% end %>
+
+<% @players.each do |player| %>
+  <ul>
+    <li>
+      <%= link_to(player.id, player) %>
+      <%= [player.primary_name, player.primary_profession].join(': ') %>
+    </li>
+  </ul>
+<% end %>
