@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_233039) do
+ActiveRecord::Schema.define(version: 2019_11_07_011741) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_trgm"
   enable_extension "plpgsql"
 
   create_table "players", force: :cascade do |t|
@@ -22,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_233039) do
     t.integer "death_year"
     t.text "primary_profession"
     t.text "known_for_titles"
+    t.index ["primary_name"], name: "index_players_on_primary_name", opclass: :gin_trgm_ops, using: :gin
   end
 
   create_table "title_basics", force: :cascade do |t|
