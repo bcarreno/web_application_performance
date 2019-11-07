@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Title Basics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tconst</th>
+      <th>Title type</th>
+      <th>Primary title</th>
+      <th>Original title</th>
+      <th>Is adult</th>
+      <th>Start year</th>
+      <th>End year</th>
+      <th>Runtime minutes</th>
+      <th>Genres</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @title_basics.each do |title_basic| %>
+      <tr>
+        <td><%= title_basic.tconst %></td>
+        <td><%= title_basic.title_type %></td>
+        <td><%= title_basic.primary_title %></td>
+        <td><%= title_basic.original_title %></td>
+        <td><%= title_basic.is_adult %></td>
+        <td><%= title_basic.start_year %></td>
+        <td><%= title_basic.end_year %></td>
+        <td><%= title_basic.runtime_minutes %></td>
+        <td><%= title_basic.genres %></td>
+        <td><%= link_to 'Show', title_basic %></td>
+        <td><%= link_to 'Edit', edit_title_basic_path(title_basic) %></td>
+        <td><%= link_to 'Destroy', title_basic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Title Basic', new_title_basic_path %>

@@ -1,0 +1,2 @@
+class TitleBasic < ApplicationRecord
+end

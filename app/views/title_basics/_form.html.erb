@@ -1,0 +1,62 @@
+<%= form_with(model: title_basic, local: true) do |form| %>
+  <% if title_basic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(title_basic.errors.count, "error") %> prohibited this title_basic from being saved:</h2>
+
+      <ul>
+      <% title_basic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tconst %>
+    <%= form.text_field :tconst %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title_type %>
+    <%= form.text_field :title_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primary_title %>
+    <%= form.text_area :primary_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :original_title %>
+    <%= form.text_area :original_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_adult %>
+    <%= form.text_area :is_adult %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_year %>
+    <%= form.number_field :start_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_year %>
+    <%= form.number_field :end_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :runtime_minutes %>
+    <%= form.number_field :runtime_minutes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genres %>
+    <%= form.text_field :genres %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

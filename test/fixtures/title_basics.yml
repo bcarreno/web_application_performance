@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tconst: MyString
+  title_type: MyString
+  primary_title: MyText
+  original_title: MyText
+  is_adult: MyText
+  start_year: 1
+  end_year: 1
+  runtime_minutes: 1
+  genres: MyString
+
+two:
+  tconst: MyString
+  title_type: MyString
+  primary_title: MyText
+  original_title: MyText
+  is_adult: MyText
+  start_year: 1
+  end_year: 1
+  runtime_minutes: 1
+  genres: MyString
