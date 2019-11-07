@@ -27,7 +27,9 @@
 
 <p>
   <strong>Known for titles:</strong>
-  <%= @player.known_for_titles %>
+  <% @player.known_for_titles.split(',').map do |x| %>
+    <%= link_to(x.strip, TitleBasic.find_by(tconst: x.strip)) %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
